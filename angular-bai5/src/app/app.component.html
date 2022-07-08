@@ -1,0 +1,32 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<ul>
+  <ng-container *ngIf="users.length > 0; else noUser">
+    <li
+      *ngFor="
+        let u of users;
+        index as idx;
+        count as total;
+        first as isFirst;
+        last as islast;
+        even as isEven;
+        odd as isOdd
+      "
+    >
+      <span>{{ u.name }} - {{ u.id }} - {{ u.phone }}</span>
+      <br />
+      <span>at index {{ idx }} out of {{ total }}</span>
+      <br />
+      <span *ngIf="isEven">I am even number</span>
+      <br />
+      <span *ngIf="isOdd">I am odd umber</span>
+      <br />
+      <span *ngIf="islast">I am last</span>
+      <br />
+      <span *ngIf="isFirst">I am first</span>
+      <br /><br /><br />
+    </li>
+  </ng-container>
+  <ng-template #noUser> No users </ng-template>
+</ul>

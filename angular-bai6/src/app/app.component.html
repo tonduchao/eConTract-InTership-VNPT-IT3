@@ -1,0 +1,37 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<button (click)="isDanger = !isDanger">Toogle Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Toogle Warning</button>
+<!--
+  - [class.ten-class]
+  -[class]="array"
+  -[class]="object"
+  -[class]="variable"
+
+<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isDanger"></div>
+-->
+<div [class]="classes"></div>
+<!--
+  -[style.tenStyle]
+  -[style.ten-Style]
+  -[style.tenStyle.unit]
+  -[style]="object"
+  -[style.css-variable]
+
+<p
+  [style.color]="'green'"
+  [style.backgroundColor]="'yellow'"
+  [style.fontSize.rem]="2"
+>
+-->
+<p
+  [style.--text-color]="isDanger ? 'red' : 'blue'"
+  [style]="{
+    color: 'var(--text-color)',
+    backgroundColor: 'yellow',
+    fontSize: '2rem'
+  }"
+>
+  em chua 18!
+</p>
